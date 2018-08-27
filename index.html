@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Tooltips Fallback</title>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script src="js/materialize.min.js"></script>
+</head>
+<body onload="onLoad()">
+<div class="wrapper">
+    <div class="section">
+        <h1>Both JS and Title Tooltip</h1>
+        <div class="social-outer">
+            <img title="Instagram" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Instagram" src="img/instagram_round.png" />
+            <img title="Twitter" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Twitter" src="img/twitter_round.png" />
+            <img title="Github" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Github" src="img/github_round.png" />
+            <img title="Gmail" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="GMail" src="img/gmail_round.png" />
+        </div>
+
+        <h1>JS Tooltip with Title Tooltip as fallback</h1>
+        <div class="social-outer">
+            <a href="#" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Instagram"><img title="Instagram" class="social-icon" src="img/instagram_round.png" /></a>
+            <a href="#" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Twitter"><img title="Twitter" class="social-icon" src="img/twitter_round.png" /></a>
+            <a href="#" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Github"><img title="Github" class="social-icon" src="img/github_round.png" /></a>
+            <a href="#" class="social-icon-outer tooltipped" data-position="bottom" data-tooltip="Gmail"><img title="Gmail" class="social-icon" src="img/gmail_round.png" /></a>
+        </div>
+    </div>
+</div>
+<noscript>
+    <style>
+        .social-icon {
+            pointer-events: all;
+        }
+    </style>
+</noscript>
+<script>
+
+    // When Page is loaded
+    function onLoad() {
+        // Initialize JavaScript Tooltips (with Materialize Library)
+        var elems = document.querySelectorAll(".tooltipped");
+        var instances = M.Tooltip.init(elems, {});
+    }
+
+</script>
+</body>
+</html>
